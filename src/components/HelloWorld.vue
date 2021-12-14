@@ -2,6 +2,11 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
+        <v-btn @click="buttonClickedTest()">A Vuetify Button</v-btn>
+      </v-col>
+    </v-row>
+    <v-row class="text-center">
+      <v-col cols="12">
         <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
@@ -76,7 +81,11 @@
 <script>
 export default {
   name: "HelloWorld",
-
+  methods: {
+    buttonClickedTest() {
+      console.log("button was clicked");
+    },
+  },
   data: () => ({
     ecosystem: [
       {
