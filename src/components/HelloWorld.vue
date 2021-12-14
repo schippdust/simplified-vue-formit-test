@@ -2,8 +2,8 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-btn @click="buttonClickedTest()"
-          >A Vuetify Button {{ testData }}</v-btn
+        <v-btn @click="buttonClickedTest(10, 10, 10)"
+          >Create Block {{ testData }}</v-btn
         >
       </v-col>
     </v-row>
@@ -85,8 +85,18 @@ import { mapState } from "vuex";
 export default {
   name: "HelloWorld",
   methods: {
-    buttonClickedTest() {
+    buttonClickedTest(w, l, h) {
       console.log("button was clicked");
+      this.createBlock(w, l, h);
+    },
+    createBlock: async (w, l, h) => {
+      let pt1 = await window.WSM.Geom.Point3d(0, 0, 0);
+      let pt2 = await window.WSM.Geom.Point3d(w, l, h);
+      let histID = await window.FormIt.GroupEdit.GetEditingHistoryID();
+      console.log(histID, pt1, pt2);
+
+      let test = await window.WSM.APICreateBlock(histID, pt1, pt2);
+      console.log(test);
     },
   },
   computed: {

@@ -5,7 +5,7 @@ Vue.use(Vuex);
 let store = {
   strict: true,
   state: {
-    testData: "test",
+    testData: "Test",
   },
   mutations: {
     changeTestData(state, n) {
