@@ -5,12 +5,20 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for viewing in browser during development
 
-This is useful for building and testing outside of FormIt
+This is useful for building and testing more rapidly when changes do not pertain directly to the FormIt API
 
 ```
 npm run serve
+```
+
+### Locally hosts files for FormIt viewing during development
+
+This is useful for testing changes that directly interact with the FormIt API during development.  While hosting files statically run the build command to update the hosted plugin, then when building has finished "Hard Reload" the plugin inside of FormIt.
+
+```
+npm run start
 ```
 
 ### Compiles and minifies for production
