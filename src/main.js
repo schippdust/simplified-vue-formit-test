@@ -7,6 +7,12 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
+Vue.directive("blur", {
+  inserted: function (el) {
+    el.onfocus = (ev) => ev.target.blur();
+  },
+});
+
 new Vue({
   vuetify,
   store,
