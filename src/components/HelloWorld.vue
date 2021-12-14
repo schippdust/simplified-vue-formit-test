@@ -2,7 +2,9 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-btn @click="buttonClickedTest()">A Vuetify Button</v-btn>
+        <v-btn @click="buttonClickedTest()"
+          >A Vuetify Button {{ testData }}</v-btn
+        >
       </v-col>
     </v-row>
     <v-row class="text-center">
@@ -79,12 +81,16 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "HelloWorld",
   methods: {
     buttonClickedTest() {
       console.log("button was clicked");
     },
+  },
+  computed: {
+    ...mapState(["testData"]),
   },
   data: () => ({
     ecosystem: [
