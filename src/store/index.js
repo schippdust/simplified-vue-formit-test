@@ -7,6 +7,16 @@ let store = {
   state: {
     testData: "test",
   },
+  mutations: {
+    changeTestData(state, n) {
+      state.testData = n;
+    },
+  },
+  getters: {
+    capitalizedTestData(state) {
+      return state.testData.toUpperCase();
+    },
+  },
 };
 
 export default new Vuex.Store(store);
